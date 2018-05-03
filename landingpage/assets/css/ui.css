@@ -128,3 +128,27 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.color1{
+    color:#25B83A;
+}
+
+.color2{
+    color:#186BA1;
+}
+
+.color3{
+    color:#A19118;
+}
+
+.color4{
+    color:#B8531C;
+}
+
+.color5{
+    color:#893EB8;
+}
+
+.color-gray{
+    color:darkgray;
+}
