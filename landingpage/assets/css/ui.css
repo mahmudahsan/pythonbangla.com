@@ -153,6 +153,30 @@ h1, h2, h3, h4, h5, h6 {
     color:darkgray;
 }
 
-.bg-light-dark{
-    background-color: #666666;
+.bg-light-contents{
+    background-color:floralwhite;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card-overflow {
+    overflow: auto;
+}
+
+.video-border {
+    border-bottom: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
 }
