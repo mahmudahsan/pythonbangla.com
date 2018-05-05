@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 color-gray">Python Beginner</strong>
+        <h3 class="mb-0">
+          <a id="python-beginner" class="color1" href="#contents">পাইথন বিগিনার</a>
+        </h3>
+        <div class="mb-2"></div>
+        <p class="card-text mb-auto card-overflow">পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয় এরকম অনেক দরকারি এবং বেসিক পাইথন প্রোগ্রামিং
+          বিষয় নিয়ে ১৪টা ভিডিও টিউটোরিয়ালের মাধ‍্যমে আলোচনা করা হয়েছে</p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="{% static 'img/cards/py-beg.png' %}" alt="Card image cap">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 color-gray">Python Advanced</strong>
+        <h3 class="mb-0">
+          <a id="python-advanced" class="color2" href="#contents">পাইথন এডভান্সড</a>
+        </h3>
+        <div class="mb-2"></div>
+        <p class="card-text mb-auto card-overflow">পাইথন দিয়ে এডভান্সড কাজ করতে চাইলে যেমন ওয়েবপেজ স্ক্র‍্যাপিং, এসকিউএল ডাটাবেজ, ওয়েবপেজ টেস্টি, রেগুলার এক্সপ্রেশন,
+          ওয়েব অটোমেশন এসব নিয়ে আলোচনা</p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="{% static 'img/cards/py-adv.png' %}" alt="Card image cap">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 color-gray">Python Career</strong>
+        <h3 class="mb-0">
+          <a id="python-career" class="color5" href="#contents">ক‍্যারিয়ার জব ফ্রিলান্স</a>
+        </h3>
+        <div class="mb-2"></div>
+        <p class="card-text mb-auto card-overflow">বাংলাদেশ এবং বাংলাদেশের বাহিরে পাইথন ডেভলপারদের কেমন চাহিদা এবং পাইথন প্রোগ্রামিং কেন্দ্রিক জব ও ফ্রিলান্স কাজ পেতে
+          চাইলে কোন ধরনের টেকনোলজি জানতে হবে, সেসব নিয়েও আলোচনা করা হয়েছে </p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="{% static 'img/cards/py-career.png' %}" alt="Card image cap">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 color-gray">Python English</strong>
+        <h3 class="mb-0">
+          <a id="python-tutorial" class="color4" href="#contents">Python Tutorials </a>
+        </h3>
+        <div class="mb-2"></div>
+        <p class="card-text mb-auto card-overflow">I periodically write Python programming related English blog posts which are mentioned in this section.
+        </p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="{% static 'img/cards/py-english.png' %}" alt="Card image cap">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 color-gray">HTML CSS</strong>
+        <h3 class="mb-0">
+          <a id="html-css" class="color3" href="#contents">ওয়েবপেজ ডিজাইন</a>
+        </h3>
+        <div class="mb-2"></div>
+        <p class="card-text mb-auto card-overflow">ওয়েব ডিজাইনার অথবা ওয়েব ডেভলপার হতে হলে এইচটিএমএল এবং সিএসএস সম্পর্কে ব‍্যাসিক নলেজ থাকা অত‍্যাবশ‍্যক। এই সিরিজে
+          আমি এইচটিএমএল এবং সিএসএস দিয়ে ওয়েব ডিজাইন আলোচনা করেছি।</p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="{% static 'img/cards/py-web.png' %}" alt="Card image cap">
+    </div>
+  </div>
+</div>
+
+<div id="contents" href="#"></div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="tab-python-beginner" data-toggle="tab" href="#con-python-beginner" role="tab" aria-controls="home"
+      aria-selected="true">পাইথন বিগিনার</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab-python-advanced" data-toggle="tab" href="#con-python-advanced" role="tab" aria-controls="profile"
+      aria-selected="false">পাইথন এডভান্সড</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab-python-career" data-toggle="tab" href="#con-python-career" role="tab" aria-controls="contact"
+      aria-selected="false">ক‍্যারিয়ার</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab-python-tutorial" data-toggle="tab" href="#con-python-tutorial" role="tab" aria-controls="contact"
+      aria-selected="false">Python Tutorials</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab-html-css" data-toggle="tab" href="#con-html-css" role="tab" aria-controls="contact" aria-selected="false">ওয়েবপেজ ডিজাইন</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="con-python-beginner" role="tabpanel" aria-labelledby="tab-python-beginner">
+    <!-- List & Videos Area -->
+    <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
+      <div role="tabpanel">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active show" id="list-home-list" data-toggle="tab" href="qcRlYt28WPM" role="tab"
+                aria-controls="list-home" aria-selected="true">১. পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয়</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="1m-kyQISM74" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.১ পাইথন ৩ উইন্ডোজ মেশিনে যেভাবে ইনস্টোল করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="YUZZBgKmqO4" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.২ PyCharm IDE উইন্ডোজে যেভাবে ইনস্টল করে পাইথন ব‍্যবহার করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="wYN5ohMh_O4" role="tab"
+                aria-controls="list-profile" aria-selected="false">২. পাইথনে কমেন্ট, ভেরিয়েবল এবং অপারেটর</a>
+            </div>
+          </div>
+          <!-- Youtube -->
+          <div id="youtube-container" class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                <div class="videoWrapper">
+                  <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/qcRlYt28WPM" frameborder="0"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="mb-3"></div>
+                <div id="youtube-description">
+                  <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor.
+                    Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat
+                    nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud
+                    sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim
+                    eu nostrud do aliquip veniam minim.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tab-pane fade" id="con-python-advanced" role="tabpanel" aria-labelledby="tab-python-advanced">
+    <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
+      <div role="tabpanel">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active show" id="list-home-list" data-toggle="tab" href="qcRlYt28WPM" role="tab"
+                aria-controls="list-home" aria-selected="true">১. পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয়</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="1m-kyQISM74" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.১ পাইথন ৩ উইন্ডোজ মেশিনে যেভাবে ইনস্টোল করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="YUZZBgKmqO4" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.২ PyCharm IDE উইন্ডোজে যেভাবে ইনস্টল করে পাইথন ব‍্যবহার করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="wYN5ohMh_O4" role="tab"
+                aria-controls="list-profile" aria-selected="false">২. পাইথনে কমেন্ট, ভেরিয়েবল এবং অপারেটর</a>
+            </div>
+          </div>
+          <!-- Youtube -->
+          <div id="youtube-container" class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                <div class="videoWrapper">
+                  <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/qcRlYt28WPM" frameborder="0"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="mb-3"></div>
+                <div id="youtube-description">
+                  <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor.
+                    Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat
+                    nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud
+                    sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim
+                    eu nostrud do aliquip veniam minim.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tab-pane fade" id="con-python-career" role="tabpanel" aria-labelledby="tab-python-career">
+    <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
+      <div role="tabpanel">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active show" id="list-home-list" data-toggle="tab" href="qcRlYt28WPM" role="tab"
+                aria-controls="list-home" aria-selected="true">১. পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয়</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="1m-kyQISM74" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.১ পাইথন ৩ উইন্ডোজ মেশিনে যেভাবে ইনস্টোল করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="YUZZBgKmqO4" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.২ PyCharm IDE উইন্ডোজে যেভাবে ইনস্টল করে পাইথন ব‍্যবহার করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="wYN5ohMh_O4" role="tab"
+                aria-controls="list-profile" aria-selected="false">২. পাইথনে কমেন্ট, ভেরিয়েবল এবং অপারেটর</a>
+            </div>
+          </div>
+          <!-- Youtube -->
+          <div id="youtube-container" class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                <div class="videoWrapper">
+                  <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/qcRlYt28WPM" frameborder="0"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="mb-3"></div>
+                <div id="youtube-description">
+                  <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor.
+                    Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat
+                    nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud
+                    sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim
+                    eu nostrud do aliquip veniam minim.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tab-pane fade" id="con-python-tutorial" role="tabpanel" aria-labelledby="tab-python-tutorial">
+    <!-- Tutorial -->
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="http://thinkdiff.net/python/python-tutorial-for-beginners-learn-how-to-setup-python/" target="_blank">1. How to Setup Python 3 in Mac or Windows and Hello World</a>
+      </li>
+      <li class="list-group-item">
+        <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-learn-comments-variables-operators/" target="_blank">2. How to Write Comments Variable Operators</a>
+      </li>
+      <li class="list-group-item">
+        <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-statement-expression-string/" target="_blank">3. What is Statements Expression and Strings</a>
+      </li>
+    </ul>
+    <!-- End of Tutorial -->
+  </div>
+  <div class="tab-pane fade" id="con-html-css" role="tabpanel" aria-labelledby="tab-html-css">
+    <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
+      <div role="tabpanel">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active show" id="list-home-list" data-toggle="tab" href="qcRlYt28WPM" role="tab"
+                aria-controls="list-home" aria-selected="true">১. পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয়</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="1m-kyQISM74" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.১ পাইথন ৩ উইন্ডোজ মেশিনে যেভাবে ইনস্টোল করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="YUZZBgKmqO4" role="tab"
+                aria-controls="list-profile" aria-selected="false">১.২ PyCharm IDE উইন্ডোজে যেভাবে ইনস্টল করে পাইথন ব‍্যবহার করব</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="wYN5ohMh_O4" role="tab"
+                aria-controls="list-profile" aria-selected="false">২. পাইথনে কমেন্ট, ভেরিয়েবল এবং অপারেটর</a>
+            </div>
+          </div>
+          <!-- Youtube -->
+          <div id="youtube-container" class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                <div class="videoWrapper">
+                  <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/qcRlYt28WPM" frameborder="0"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="mb-3"></div>
+                <div id="youtube-description">
+                  <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor.
+                    Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat
+                    nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud
+                    sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim
+                    eu nostrud do aliquip veniam minim.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}
