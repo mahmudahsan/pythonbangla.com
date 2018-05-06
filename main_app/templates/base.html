@@ -41,7 +41,7 @@
           </div> -->
             </div>
         </header>
-
+        
         <div class="nav-scroller py-1 mb-2">
             <div class="row">
                 <div class="col-sm-4">
@@ -49,28 +49,17 @@
                         <a class="p-2 text-muted" href="#">Home</a>
                         <a class="p-2 text-muted" href="#">Books</a>
                         <a class="p-2 text-muted" href="#">About</a>
+                        
+                       
                     </nav>
                 </div>
                 <div class="col-sm-8">
                     <nav class="nav d-flex justify-content-end">
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-github.png' %}" alt="Github" height="30">
-                        </a>
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-youtube.png' %}" alt="Youtube" height="30">
-                        </a>
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-twitter.png' %}" alt="Twitter" height="30">
-                        </a>
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-facebook.png' %}" alt="Facebook" height="30">
-                        </a>
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-linkedin.png' %}" alt="Linkedin" height="30">
-                        </a>
-                        <a class="p-2 text-muted" href="#">
-                            <img src="{% static 'img/social/icon-wordpress.png' %}" alt="Thinkdiff.net" height="30">
-                        </a>
+                        {% for s in social %}
+                            <a class="p-2 text-muted" href="{{s.url}}" target="_blank">
+                                <img src="{% static 'img/social/icon-'%}{{s.name}}.png" alt="{{s.name|title}}" height="30">
+                            </a>
+                        {% endfor %}
                     </nav>
                 </div>
             </div>
