@@ -118,33 +118,7 @@
 
     <script src="{% static 'js/vendor/holder.min.js' %}"></script>
 
-    <script>
-        $('#python-beginner').on('click', function (e) {
-            //e.preventDefault()
-            $('#tab-python-beginner').tab('show')
-        })
-        $('#python-advanced').on('click', function (e) {
-            $('#tab-python-advanced').tab('show')
-        })
-        $('#python-career').on('click', function (e) {
-            $('#tab-python-career').tab('show')
-        })
-        $('#python-tutorial').on('click', function (e) {
-            $('#tab-python-tutorial').tab('show')
-        })
-        $('#html-css').on('click', function (e) {
-            $('#tab-html-css').tab('show')
-        })
-
-        $('#myTabContent #list-tab a').each(function (index) {
-            $(this).on('click', function (e) {
-                var href = $(this).attr('href')
-                console.log(href)
-
-                var newUrl = "https://www.youtube.com/embed/" + href
-                $('#youtube-container iframe').attr('src', newUrl)
-            })
-        })
-    </script>
+    {% block script %}
+    {% endblock %}
 </body>
 </html>
