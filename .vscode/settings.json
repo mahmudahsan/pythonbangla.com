@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/mahmud/.local/share/virtualenvs/pythonbangla.com-6ROH69FU/bin/python"
+    "python.pythonPath": "/Users/mahmud/.local/share/virtualenvs/pythonbangla.com-6ROH69FU/bin/python",
+    "python.linting.enabled": false
 }

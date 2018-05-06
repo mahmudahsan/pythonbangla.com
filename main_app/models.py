@@ -28,3 +28,16 @@ class TopicCategory(models.Model):
 
     def __str__(self):
         return self.title_english + " | " + self.title_other
+
+class TopicContent(models.Model):
+    topic_category = models.ForeignKey(
+        'TopicCategory',
+        on_delete = models.CASCADE,
+    )
+    title = models.CharField(max_length=200)
+    description = models.TextField(default='', blank=True, null=True)
+    video_id = models.CharField(max_length=20, blank=True, null=True)
+    url = models.CharField(max_length=200, default=None, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
