@@ -12,9 +12,18 @@ class TopicCategory(models.Model):
     title_other = models.CharField(max_length=100)
     short_description = models.TextField(max_length=200)
     image_name = models.CharField(max_length=50)
-    topic_type = (
-        ('YT', 'Youtube'),
+
+    YOUTUBE = 'YT'
+    URL     = 'UR'
+    topic_choice = (
+        ('YT', 'Youtube'), 
         ('UR', "URL"),
+    )
+
+    topic_type = models.CharField(
+        max_length=2,
+        choices=topic_choice,
+        default=YOUTUBE,
     )
 
     def __str__(self):

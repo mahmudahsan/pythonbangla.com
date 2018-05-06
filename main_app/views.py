@@ -6,6 +6,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
          context = super(HomeView, self).get_context_data(**kwargs)
-         context['social'] = SocialLink.objects.all()
-         context['topic_category'] = TopicCategory.objects.all()
+         context['social'] = SocialLink.objects.all().order_by('pk')
+         context['topic_category'] = TopicCategory.objects.all().order_by('pk')
          return context
