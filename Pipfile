@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+"psycopg2" = "*"
 
 [dev-packages]
 pylint = "*"
