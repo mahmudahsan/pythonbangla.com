@@ -1,6 +1,6 @@
 from django.db import models
 
-class SocialLinks(models.Model):
+class SocialLink(models.Model):
     name = models.CharField(max_length=30)
     url = models.TextField()
 

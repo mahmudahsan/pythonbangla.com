@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import SocialLinks
+from .models import SocialLink
 from .models import TopicCategory
 
 # Register your models here.
-admin.site.register(SocialLinks)
+admin.site.register(SocialLink)
 admin.site.register(TopicCategory)
