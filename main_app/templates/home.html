@@ -26,7 +26,7 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   {% for topic in topic_category %}
   <li class="nav-item">
-      <a class="nav-link {% if forloop.counter == 1 %}active{% endif %}" id="tab-{{ topic.title_english|cut:' ' }}" data-toggle="tab" href="#con-{{ topic.title_english|cut:' ' }}" role="tab" aria-controls="home"
+      <a class="nav-link {% if forloop.counter == 1 %}active show{% endif %}" id="tab-{{ topic.title_english|cut:' ' }}" data-toggle="tab" href="#con-{{ topic.title_english|cut:' ' }}" role="tab" aria-controls="home"
         aria-selected="true">{{ topic.title_other }}</a>
   </li>
   {% endfor %}
@@ -45,7 +45,7 @@
                 {% for tcontent in topic.contents %}
                 <a class="list-group-item list-group-item-action {% if forloop.counter == 1 %} active show {% endif %}" id="list-home-list" data-toggle="tab" href="{{ tcontent.video_id }}" role="tab"
                   aria-controls="list-home" aria-selected="true">{{ tcontent.title }}</a>
-                  <span class="d-none">{{ tcontent.description }}</span>
+                  <span id="sdesc" class="d-none">{{ tcontent.description }}</span>
                 {% endfor %}
               </div>
             </div>
@@ -58,7 +58,7 @@
                       allowfullscreen></iframe>
                   </div>
                   <div class="mb-3"></div>
-                  <div id="youtube-description">
+                  <div id="youtube-description" class="youtube-description">
                       <pre style="white-space: pre-wrap;">{{topic.contents.0.description}}</pre>
                   </div>
                 </div>
@@ -90,19 +90,26 @@
 <script>
   {% for topic in topic_category %}
   $("#id_{{topic.title_english|cut:' '}}").on('click', function (e) {
-      $("#tab-{{topic.title_english|cut:' '}}").tab('show')
+    var tabId = "#tab-{{topic.title_english|cut:' '}}"
+    $(tabId).tab('show')
   })
   {% endfor %}
+
+  $(function(){
+    $(".youtube-description pre").each(function(){
+      $(this).html(linkify($(this).text()))
+    })
+  }) 
 
   $('#myTabContent #list-tab a').each(function (index) {
       $(this).on('click', function (e) {
           var href = $(this).attr('href')
           var newUrl = "https://www.youtube.com/embed/" + href
-          $('#youtube-container iframe').attr('src', newUrl)
+          $('#youtube-container iframe:visible').attr('src', newUrl)
 
           var videoDesc = $(this).next().text()
           videoDesc = linkify(videoDesc)
-          $('#youtube-description pre').html(videoDesc)
+          $('#youtube-description pre:visible').html(videoDesc)
       })
   })
 
