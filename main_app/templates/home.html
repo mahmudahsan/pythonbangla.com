@@ -71,15 +71,11 @@
       {% elif topic.topic_type == 'UR' %}
       <!-- Tutorial -->
       <ul class="list-group rounded">
+          {% for tcontent in topic.contents %}
           <li class="list-group-item">
-            <a href="http://thinkdiff.net/python/python-tutorial-for-beginners-learn-how-to-setup-python/" target="_blank">1. How to Setup Python 3 in Mac or Windows and Hello World</a>
+            <a href="{{ tcontent.url }}" target="_blank">{{ tcontent.title }}</a>
           </li>
-          <li class="list-group-item">
-            <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-learn-comments-variables-operators/" target="_blank">2. How to Write Comments Variable Operators</a>
-          </li>
-          <li class="list-group-item">
-            <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-statement-expression-string/" target="_blank">3. What is Statements Expression and Strings</a>
-          </li>
+          {% endfor %}
       </ul>
       <!-- End of Tutorial -->
       {% endif %}
