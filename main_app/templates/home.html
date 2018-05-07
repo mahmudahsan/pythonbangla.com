@@ -35,45 +35,54 @@
 <div class="tab-content" id="myTabContent">
 {% for topic in topic_category %}
   <div class="tab-pane fade {% if forloop.counter == 1 %}show active{% endif %}" id="con-{{ topic.title_english|cut:' ' }}" role="tabpanel" aria-labelledby="tab-{{ topic.title_english|cut:' ' }}">
-    <!-- List & Videos Area -->
-    <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
-      <div role="tabpanel">
-        <div class="row">
-          <div class="col-4">
-            <div class="list-group" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action active show" id="list-home-list" data-toggle="tab" href="qcRlYt28WPM" role="tab"
-                aria-controls="list-home" aria-selected="true">১. পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয়</a>
-              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="1m-kyQISM74" role="tab"
-                aria-controls="list-profile" aria-selected="false">১.১ পাইথন ৩ উইন্ডোজ মেশিনে যেভাবে ইনস্টোল করব</a>
-              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="YUZZBgKmqO4" role="tab"
-                aria-controls="list-profile" aria-selected="false">১.২ PyCharm IDE উইন্ডোজে যেভাবে ইনস্টল করে পাইথন ব‍্যবহার করব</a>
-              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="wYN5ohMh_O4" role="tab"
-                aria-controls="list-profile" aria-selected="false">২. পাইথনে কমেন্ট, ভেরিয়েবল এবং অপারেটর</a>
+      {% if topic.topic_type == 'YT' %}
+      <!-- List & Videos Area -->
+      <div class="video-border p-3 p-md-5 rounded-right rounded-bottom">
+        <div role="tabpanel">
+          <div class="row">
+            <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+                {% for tcontent in topic.contents %}
+                <a class="list-group-item list-group-item-action {% if forloop.counter == 1 %} active show {% endif %}" id="list-home-list" data-toggle="tab" href="{{ tcontent.video_id }}" role="tab"
+                  aria-controls="list-home" aria-selected="true">{{ tcontent.title }}</a>
+                  <span class="d-none">{{ tcontent.description }}</span>
+                {% endfor %}
+              </div>
             </div>
-          </div>
-          <!-- Youtube -->
-          <div id="youtube-container" class="col-8">
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                <div class="videoWrapper">
-                  <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/qcRlYt28WPM" frameborder="0"
-                    allowfullscreen></iframe>
-                </div>
-                <div class="mb-3"></div>
-                <div id="youtube-description">
-                  <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor.
-                    Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat
-                    nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud
-                    sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim
-                    eu nostrud do aliquip veniam minim.
-                  </p>
+            <!-- Youtube -->
+            <div id="youtube-container" class="col-8">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                  <div class="videoWrapper">
+                    <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/{{topic.contents.0.video_id}}" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="mb-3"></div>
+                  <div id="youtube-description">
+                      <pre style="white-space: pre-wrap;">{{topic.contents.0.description}}</pre>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {% elif topic.topic_type == 'UR' %}
+      <!-- Tutorial -->
+      <ul class="list-group rounded">
+          <li class="list-group-item">
+            <a href="http://thinkdiff.net/python/python-tutorial-for-beginners-learn-how-to-setup-python/" target="_blank">1. How to Setup Python 3 in Mac or Windows and Hello World</a>
+          </li>
+          <li class="list-group-item">
+            <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-learn-comments-variables-operators/" target="_blank">2. How to Write Comments Variable Operators</a>
+          </li>
+          <li class="list-group-item">
+            <a href="http://thinkdiff.net/python/python-tutorial-for-beginner-statement-expression-string/" target="_blank">3. What is Statements Expression and Strings</a>
+          </li>
+      </ul>
+      <!-- End of Tutorial -->
+      {% endif %}
   </div>
 {% endfor %}
 </div>
@@ -81,6 +90,7 @@
 {% endblock content %}
 
 {% block script %}
+<script src="{% static 'js/ba-linkify.min.js' %}"></script>
 <script>
   {% for topic in topic_category %}
   $("#id_{{topic.title_english|cut:' '}}").on('click', function (e) {
@@ -91,11 +101,14 @@
   $('#myTabContent #list-tab a').each(function (index) {
       $(this).on('click', function (e) {
           var href = $(this).attr('href')
-          console.log(href)
-
           var newUrl = "https://www.youtube.com/embed/" + href
           $('#youtube-container iframe').attr('src', newUrl)
+
+          var videoDesc = $(this).next().text()
+          videoDesc = linkify(videoDesc)
+          $('#youtube-description pre').html(videoDesc)
       })
   })
+
 </script>
 {% endblock script %}

@@ -8,7 +8,7 @@ class SocialLink(models.Model):
         return self.name
 
 class TopicCategory(models.Model):
-    title_english = models.CharField(max_length=100,)
+    title_english = models.CharField(max_length=100)
     title_other = models.CharField(max_length=100)
     short_description = models.TextField(max_length=200)
     image_name = models.CharField(max_length=50)
