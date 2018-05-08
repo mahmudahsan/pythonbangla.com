@@ -54,7 +54,7 @@
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade active show" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                   <div class="videoWrapper">
-                    <iframe id="youtube-player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/{{topic.contents.0.video_id}}" frameborder="0"
+                    <iframe id="youtube-player-{{ topic.id }}" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/{{topic.contents.0.video_id}}" frameborder="0"
                       allowfullscreen></iframe>
                   </div>
                   <div class="mb-3"></div>
@@ -92,6 +92,12 @@
   $("#id_{{topic.title_english|cut:' '}}").on('click', function (e) {
     var tabId = "#tab-{{topic.title_english|cut:' '}}"
     $(tabId).tab('show')
+    /*
+    $(".videoWrapper iframe").each(function(){
+        // $(this).addClass("invisible")
+        $(this).attr("class","invisible")
+    }) */
+    //$("#youtube-player-{{ topic.id }}").attr("class","visible")
   })
   {% endfor %}
 
@@ -105,11 +111,11 @@
       $(this).on('click', function (e) {
           var href = $(this).attr('href')
           var newUrl = "https://www.youtube.com/embed/" + href
-          $('#youtube-container iframe:visible').attr('src', newUrl)
+          $('#myTabContent .tab-pane:visible #youtube-container iframe').attr('src', newUrl)
 
           var videoDesc = $(this).next().text()
           videoDesc = linkify(videoDesc)
-          $('#youtube-description pre:visible').html(videoDesc)
+          $('#myTabContent .tab-pane:visible #youtube-description pre').html(videoDesc)
       })
   })
 
