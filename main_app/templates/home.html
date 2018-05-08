@@ -44,7 +44,7 @@
               <div class="list-group" id="list-tab" role="tablist">
                 {% for tcontent in topic.contents %}
                 <a class="list-group-item list-group-item-action {% if forloop.counter == 1 %} active show {% endif %}" id="list-home-list" data-toggle="tab" href="{{ tcontent.video_id }}" role="tab"
-                  aria-controls="list-home" aria-selected="true">{{ tcontent.title }}</a>
+                  aria-controls="list-home" aria-selected="true">{{ tcontent.title }}{% if tcontent.tag %}<span style="display:block" class="badge text-primary">{{tcontent.tag}}</span>{% endif %}</a>
                   <span id="sdesc" class="d-none">{{ tcontent.description }}</span>
                 {% endfor %}
               </div>

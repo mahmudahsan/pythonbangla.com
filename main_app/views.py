@@ -12,7 +12,7 @@ class HomeView(TemplateView):
         context['topic_category'] = TopicCategory.objects.all().order_by('pk')
 
         for topic in context['topic_category']:
-            topic.contents = TopicContent.objects.filter(topic_category=topic.id).order_by('pk')
+            topic.contents = TopicContent.objects.filter(topic_category=topic.id).order_by('order')
 
         for topic in context['topic_category']:
             print(topic.contents)

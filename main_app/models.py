@@ -38,6 +38,8 @@ class TopicContent(models.Model):
     description = models.TextField(default='', blank=True, null=True)
     video_id = models.CharField(max_length=20, blank=True, null=True)
     url = models.CharField(max_length=200, default=None, blank=True, null=True)
+    tag = models.CharField(max_length=40, default=None, blank=True, null=True)
+    order = models.FloatField(default=0)
 
     def __str__(self):
         return self.title
