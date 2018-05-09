@@ -28,11 +28,11 @@
     <link href="{% static 'css/ui.css' %}" rel="stylesheet">
 
     <!-- Facebook Open Graph -->
-    <meta property="og:url" content="{{ request.get_host }}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="পাইথন বাংলা টিউটোরিয়াল" />
     <meta property="og:description" content="এই সাইটে বেসিক এবং এডভান্সড পাইথন প্রোগ্রামিং নিয়ে অনেকগুলো ভিডিও টিউটোরিয়াল পাবলিশ করা হয়েছে। পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয় এরকম অনেক দরকারি এবং এডভান্সড কাজ করতে চাইলে যেমন ওয়েবপেজ স্ক্র‍্যাপিং, এসকিউএল ডাটাবেজ, ওয়েবপেজ টেস্টি, রেগুলার এক্সপ্রেশন, ওয়েব অটোমেশন এসব নিয়েও আলোচনা করা হয়েছে।" />
-    <meta property="og:image" content="{% static 'img/pythonbangla.jpg' %}" />
+    <meta property="og:image" content="http://{{ request.get_host }}{% static 'img/pythonbangla.jpg' %}" />
 
 
     <!-- Header section from admin panel -->
