@@ -48,22 +48,16 @@
         </header>
         
         <div class="nav-scroller py-1 mb-2" style="overflow:hidden;">
-            <div class="row">
-                <div class="col-sm-4">
-                    <nav class="nav">
+                <div class="float-left"><nav class="nav">
                         <a class="p-2 text-muted" href="/">Home</a>
-                    </nav>
-                </div>
-                <div class="col-sm-8">
+                    </nav></div>
+                <div class="float-right">
                     <nav class="nav d-flex justify-content-end">
                         {% for s in social %}
-                            <a class="p-2 text-muted" href="{{s.url}}" target="_blank">
-                                <img src="{% static 'img/social/icon-'%}{{s.name}}.png" alt="{{s.name|title}}" height="30">
-                            </a>
+                         <a class="p-2 text-muted" href="{{s.url}}" target="_blank"><img src="{% static 'img/social/icon-'%}{{s.name}}.png" alt="{{s.name|title}}" height="30"></a>
                         {% endfor %}
                     </nav>
                 </div>
-            </div>
         </div>
 
         {% block content %}
