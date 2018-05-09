@@ -1,6 +1,6 @@
 /* stylelint-disable selector-list-comma-newline-after */
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .blog-header {
   line-height: 1;
