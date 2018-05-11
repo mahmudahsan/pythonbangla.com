@@ -64,7 +64,7 @@ git clone https://github.com/mahmudahsan/pythonbangla.com.git djangodemo
 cd djangodemo # Enter the project dir
 ```
 
-2. Now run and install django by pipenv
+2. Now run and install django by [pipenv](https://docs.pipenv.org)
 
 ```shell
 pipenv install django
@@ -109,7 +109,69 @@ python3 manage.py runserver
     <img src="github-readme-assets/demo1.png" width="800" alt="demo 1" />
 </p>	
 
+10. Quit the server with CONTROL-C in terminal 
+```shell
+CONTROL-C
+```
+
 ## How to use admin panel to manage contents
+
+1. First create a superuser
+```shell
+python3 manage.py createsuperuser
+```
+2. Now run the server again
+```shell
+python3 manage.py runserver
+```
+3. Now in web browser visit http://127.0.0.1:8000/admin . Login with the superuser name and password you created already.
+
+You will see the following admin panel with 4 tables
+<p align="center">
+    <img src="github-readme-assets/demo2.png" width="800" alt="demo 2" />
+</p>	
+
+4. Now add a topic category. Click the [+ Add] button
+
+You will see the following form
+<p align="center">
+    <img src="github-readme-assets/demo3.png" width="800" alt="demo 3" />
+</p>	
+
+Now fill the form for our demo purpose. In later you can modify/remove/add anything according to your requirments. After filling, SAVE the form.
+
+| Column  	|  Data 	|
+|---	    |---	|
+|  Title English 	|   Python Beginner	|
+|  Title Other 	|   পাইথন বিগিনার	|
+|  Short Description 	|   পাইথন দিয়ে আমরা একটা ওয়েব অ‍্যাপ বানাই।	|
+|  Image Name	|   py-beg.png	|
+|  Topic Type 	|   Youtube	|
+
+ py-beg.png image already stored in projects djangodemo/static/img/py-beg.png. So if you want to use other image, please put that on this directory and mention the name in the form.
+ 
+ 5. Now go to Home › Main_App and click [+ Add] in Topic Contents
+ 
+ You will see the following form. Fill with some data like the demo and click SAVE. 
+ 
+ * Url is used for Blog Post link, so for youtube no need. 
+ * Tag is optional as well. If you put tag, it will be shown in the home page playlist. 
+ * Order is used to rank list item accordingly.
+ 
+<p align="center">
+    <img src="github-readme-assets/demo4.png" width="800" alt="demo 4" />
+</p>
+ 
+ 6. Now visit http://127.0.0.1:8000 again 
+ 
+ You will see the following web page
+ 
+ <p align="center">
+    <img src="github-readme-assets/demo5.png" width="800" alt="demo 5" />
+</p>
+
+7. 
+
 
 ## Setup Amazon S3 CDN to upload static content 
 Django by default doesn't support serving static files in production. 
