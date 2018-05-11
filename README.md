@@ -170,7 +170,28 @@ Now fill the form for our demo purpose. In later you can modify/remove/add anyth
     <img src="github-readme-assets/demo5.png" width="800" alt="demo 5" />
 </p>
 
-7. 
+7. To publish URL links like the following example
+ 
+ <p align="center">
+    <img src="github-readme-assets/demo6.png" width="800" alt="demo6" />
+ </p>
+ 
+ * Add a topic category and set the Topic Type URL
+ 
+ <p align="center">
+    <img src="github-readme-assets/demo7.png" width="800" alt="demo7" />
+ </p>
+
+* Add topic content and provide Title and URL
+
+ <p align="center">
+    <img src="github-readme-assets/demo8.png" width="800" alt="demo8" />
+ </p>
+
+Now visit http://127.0.0.1:8000 again to see the updates
+
+#### Social Links
+1. 
 
 
 ## Setup Amazon S3 CDN to upload static content 
