@@ -242,6 +242,7 @@ INSTALLED_APPS = [
 * At the bottom of setting.py write and update the following codes and fill the ID, KEY, BUCKET_NAME from your account. 
 * Also special notice AWS_S3_CUSTOM_DOMAIN this part. If you create different location for your bucket, you have to update it s3.us-east-2.amazonaws.com and have to give proper location
 
+```Python
 AWS_ACCESS_KEY_ID = ''
 AWS_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = ''
@@ -256,6 +257,7 @@ os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+```
 
 * Now run the following command to automatically upload your project static files to Amazon S3
 
