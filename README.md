@@ -216,7 +216,52 @@ Now visit http://127.0.0.1:8000 again to see the updates
  </p>
 
 ## Setup Amazon S3 CDN to upload static content 
-Django by default doesn't support serving static files in production. 
+Django by default doesn't support serving static files in production. So the best and recommended way to upload static files in CDN network. In this case, I like Amazon S3 CDN and its super easy to use.
+
+1. First you need to create a [Amazon Aws](https://aws.amazon.com) account
+2. You have to create S3 bucket/container. To know how to proceed [follow this tutorial](https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html)
+
+2. Install two new libraries
+
+```shell
+pipenv install boto3
+pipenv install django-storages
+```
+
+3. Updates project's settings.py file
+
+* Add 'storage' above the app within INSTALLED_APPS
+
+```Python
+INSTALLED_APPS = [
+    ...,
+    'storages',
+    'main_app'
+]
+```
+* At the bottom of setting.py write and update the following codes and fill the ID, KEY, BUCKET_NAME from your account. 
+* Also special notice AWS_S3_CUSTOM_DOMAIN this part. If you create different location for your bucket, you have to update it s3.us-east-2.amazonaws.com and have to give proper location
+
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = ''
+AWS_S3_CUSTOM_DOMAIN = 's3.us-east-2.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, 'static'),
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+* Now run the following command to automatically upload your project static files to Amazon S3
+
+```shell
+python3 manage.py collectstatic
+```
 
 ## Setup And Running in Heroku without static content 
 
