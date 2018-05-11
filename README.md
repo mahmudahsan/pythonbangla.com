@@ -8,16 +8,16 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 
 # Table of Contents
 
-- [Technology Used](#Technology-Used)
-- [Features](#Features)
-- [Setup in local machine](#Setup-in-local-machine)
-- [Setup PostgreSQL in local machine](#Setup-PostgreSQL-in-local-machine)
-- [Setup Amazon S3 CDN to upload static content](#Setup-Amazon-S3-CDN-to-upload-static-content)
-- [Setup And Running in Heroku without static content](#Setup-And-Running-in-Heroku-without-static-content)
-- [Setup And Running in Heroku with static content](#Setup-And-Running-in-Heroku-with-static-content)
+- [Technology Used](#technology-used)
+- [Features](#features)
+- [Setup in local machine](#setup-in-local-machine)
+- [Setup PostgreSQL in local machine](#setup-postgresql-in-local-machine)
+- [Setup Amazon S3 CDN to upload static content](#setup-amazon-s3-cdn-to-upload-static-content)
+- [Setup And Running in Heroku without static content](#setup-and-running-in-heroku-without-static-content)
+- [Setup And Running in Heroku with static content](#setup-and-running-in-heroku-with-static-content)
 - [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
-- [Contribution](#Contribution)
-- [Questions or feedback?](#Questions-or-feedback?)
+- [Contribution](#contribution)
+- [Questions or feedback?](#questions-or-feedback)
 
 ## Technology Used
 1. [Django](https://www.djangoproject.com/)
@@ -43,7 +43,7 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 
 ```
 
-### Setup PostgreSQL in local machine
+## Setup PostgreSQL in local machine
 
 ## Setup Amazon S3 CDN to upload static content 
 img, js ,css
@@ -51,8 +51,6 @@ img, js ,css
 ## Setup And Running in Heroku without static content 
 
 ## Setup And Running in Heroku with static content
-
-## How to use admin panel to manage contents
 
 ## How to use admin panel to manage contents
 
