@@ -379,10 +379,12 @@ pipenv install whitenoise
 ```
 
 4. # In setting.py at the bottom add 3 lines
+```python
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
 STATIC_URL = '/static/' # This is already written
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
 
 5. If you already disabled collect static command then enable it
 ```shell
