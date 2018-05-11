@@ -378,12 +378,12 @@ pipenv install whitenoise
 'django.middleware.common.CommonMiddleware',
 ```
 
-4. # In setting.py at the bottom add 3 lines
+4. # In setting.py at the bottom add the following lines
 ```python
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
-STATIC_URL = '/static/' # This is already written
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #new
 ```
 
 5. If you already disabled collect static command then enable it
