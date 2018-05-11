@@ -265,8 +265,85 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 python3 manage.py collectstatic
 ```
 
+* If you visit http://127.0.0.1:8000 in your browser, now all the static content will be served from amazon S3 not from your local dir.
+
 ## Setup And Running in Heroku without static content 
 
+Well now finally we can deploy our project in web server. For me, I found it is quite easy to use [Heroku](https://www.heroku.com) one of the popular python app hosting site. [Heroku](https://www.heroku.com) also has free tier package. So you can upload any python web project there, test and if satisified you can upgrade to premium service. Then you can add your own domain. Also heroku provides PostgreSQL service as well. 
+
+1. Create an account on [Heroku](https://www.heroku.com)
+2. Install Heroku CLI (Command Line Interface) in your machine. Follow [heroku tutorial](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+3. Also I assume you have [git installed in your machine](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and you can use git by typing commands in terminal/shell
+4. Now create a new file named [Procfile](https://devcenter.heroku.com/articles/procfile)
+
+```shell
+touch Procfile
+```
+* Now open the Procfile in any editor and add the following code to specify heroku to use [Gunicorn](http://gunicorn.org) web server.
+
+```shell
+web: gunicorn pythonbangla_project.wsgi --log-file -
+```
+
+5. Install gunicorn in your machine
+
+```shell
+pipenv install gunicorn
+```
+
+6. Now run the following heroku commands in Terminal/Shell
+
+* When asks for email/password, provide your heroku account credentials.
+```shell
+heroku login
+```
+
+* After login successfully, create a heroku project by
+
+```shell
+heroku create django-demo-2018 # if this name django-demo-2018 available you can use otherwise try different name
+# OR
+heroku create # it will generate a random name for heroku project
+```
+
+* Now run the following command to set heroku's git's remote url to your project name
+```shell
+heroku git:remote -a django-demo-2018 # in your case may be change django-demo-2018 to the name you selected or get randomly from heroku
+```
+
+* Now disable auto collection static files here i assume you are using Amazon S3 or other service
+```shell
+heroku config:set DISABLE_COLLECTSTATIC=1
+```
+
+#### Copy PostgreSQL configuration and update your django's settings.py Database section
+
+* visit [heroku dashboard](https://dashboard.heroku.com/apps) click your app
+* Then click Heroku Postgres within Installed add-ons section
+* Then go to settings and click view database credentials
+* Now copy those info and update your django project's settins.py DATABASES->Default section
+
+* Now run the following git commands to add your changes and commit them
+```shell
+git add -A
+git commit -m "heroku config updated"
+```
+
+* Now push the code on heroku
+```shell
+git push heroku master 
+# OR if you use a different git branch in your machine then run
+git push heroku LOCAL_BRANCH_NAME:master 
+```
+
+* Finally tart web process on heroku
+```shell
+heroku ps:scale web=1
+```
+
+* Now you can browse your heroku app in your web browser. If you got the name django-demo-2018 you can browse
+https://django-demo-2018.herokuapp.com/
+ 
 ## Setup And Running in Heroku with static content
 
 ## How to force https in django
