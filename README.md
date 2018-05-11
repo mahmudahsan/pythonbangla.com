@@ -323,6 +323,13 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 * Then go to settings and click view database credentials
 * Now copy those info and update your django project's settins.py DATABASES->Default section
 
+* Add '*' in Allowed hosts in settings.py
+
+```Python
+DEBUG = False # first test it with False, if everythin runs successully then make it True, commit and push again
+ALLOWED_HOSTS = ['*']
+```
+
 * Now run the following git commands to add your changes and commit them
 ```shell
 git add -A
