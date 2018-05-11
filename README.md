@@ -15,7 +15,7 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 - [Setup Amazon S3 CDN to upload static content](#Setup-Amazon-S3-CDN-to-upload-static-content)
 - [Setup And Running in Heroku without static content](#Setup-And-Running-in-Heroku-without-static-content)
 - [Setup And Running in Heroku with static content](#Setup-And-Running-in-Heroku-with-static-content)
-- [How to use admin panel to manage contents](#How-to-use-admin-panel-to-manage-contents)
+- [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
 - [Contribution](#Contribution)
 - [Questions or feedback?](#Questions-or-feedback?)
 
