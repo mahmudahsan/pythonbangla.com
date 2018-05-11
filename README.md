@@ -336,7 +336,7 @@ git push heroku master
 git push heroku LOCAL_BRANCH_NAME:master 
 ```
 
-* Finally tart web process on heroku
+* Finally start web process on heroku
 ```shell
 heroku ps:scale web=1
 ```
