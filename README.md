@@ -66,7 +66,7 @@ git clone https://github.com/mahmudahsan/pythonbangla.com.git djangodemo
 cd djangodemo # Enter the project dir
 ```
 
-2. Now run and install django by [pipenv](https://docs.pipenv.org)
+2. Now run and install django by [pipenv](http://thinkdiff.net/python/python-official-pipenv-packaging-tool-for-virtualenv-and-pip-in-mac-and-windows/)
 
 ```shell
 pipenv install django
