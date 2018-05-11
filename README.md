@@ -16,6 +16,8 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 - [Setup And Running in Heroku without static content](#Setup-And-Running-in-Heroku-without-static-content)
 - [Setup And Running in Heroku with static content](#Setup-And-Running-in-Heroku-with-static-content)
 - [How to use admin panel to manage contents](#How-to-use-admin-panel-to-manage-contents)
+- [Contribution](#Contribution)
+- [Questions or feedback?](#Questions-or-feedback?)
 
 ## Technology Used
 1. [Django](https://www.djangoproject.com/)
@@ -33,6 +35,7 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 6. Youtube video description also can be added from admin panel
 7. In description, link automatically converted to hyperlink
 8. In Admin easy way to add javascript code within head tag
+9. Easy way to add Google Analytics or Google Adsense auto ads
 
 ## Setup in local machine
 
@@ -50,3 +53,12 @@ img, js ,css
 ## Setup And Running in Heroku with static content
 
 ## How to use admin panel to manage contents
+
+## How to use admin panel to manage contents
+
+## Contribution
+If you want to contribute on this project, you're welcome to fork the project and submit a pull request. Just try to not break the existing things.
+
+## Questions or feedback?
+
+Feel free to [open an issue](https://github.com/mahmudahsan/pythonbangla.com/issues/new), or find me [@mahmudahsan on Twitter](https://twitter.com/mahmudahsan).
