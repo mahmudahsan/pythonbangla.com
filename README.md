@@ -204,6 +204,14 @@ Now visit http://127.0.0.1:8000 again to see the updates
     <img src="github-readme-assets/demo-social2.png" width="800" alt="demo-social2" />
  </p>
 
+#### JavaScript code like Google analytics or Google adsense code can be pushed within head tags 
+
+* To do this add site option and paste javascript code in header section
+* Only create one field in this table and add as many javascript code you want
+
+ <p align="center">
+    <img src="github-readme-assets/demo9.png" width="800" alt="demo 9" />
+ </p>
 
 ## Setup Amazon S3 CDN to upload static content 
 Django by default doesn't support serving static files in production. 
