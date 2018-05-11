@@ -353,6 +353,50 @@ https://django-demo-2018.herokuapp.com/
  
 ## Setup And Running in Heroku with static content
 
+If you don't want to use Amazon S3 or other CDN service and want to server static contents from heroku then you can follow this way to solve the problem.
+
+* Before following [Setup And Running in Heroku without static content](#setup-and-running-in-heroku-without-static-content) steps follow this:
+
+1. Install the [whitenoise package](http://whitenoise.evans.io/en/stable/)
+```shell
+pipenv install whitenoise
+```
+
+2. Open settings.py and within INSTALLED_APP write whitenoise command between messages and staticfiles
+
+```Python
+'django.contrib.messages',
+'whitenoise.runserver_nostatic', # whitenoise
+'django.contrib.staticfiles',
+'main_app'
+```
+
+3. In setting.py, within MIDDLEWARE add whitenoise between session and common
+```Python
+'django.contrib.sessions.middleware.SessionMiddleware',
+'whitenoise.middleware.WhiteNoiseMiddleware', # whitenoise
+'django.middleware.common.CommonMiddleware',
+```
+
+4. # In setting.py at the bottom add 3 lines
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
+STATIC_URL = '/static/' # This is already written
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+5. If you already disabled collect static command then enable it
+```shell
+heroku config:unset DISABLE_COLLECTSTATIC=1
+```
+
+6. Now add and commit
+```shell
+git add -A
+git commit -m "Whitenoise config added"
+```
+
+7. Now follow the steps described in here [Setup And Running in Heroku without static content](#setup-and-running-in-heroku-without-static-content) 
+
 ## How to force https in django
 
 If your up the project in [heroku](https://www.heroku.com) and use their premium service and add a domain, [heroku](https://www.heroku.com) will automatically add a SSL so you can use https instead of http.
