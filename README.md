@@ -104,10 +104,9 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-9. Visit http://127.0.0.1:8000/ in a web browser 
-You will see the following blank webpage without anything
+9. Visit http://127.0.0.1:8000/ in a web browser. You will see the following blank webpage without any contents
 <p align="center">
-    <img src="github-readme-assets/demo1.png" width="375" max-width="50%" alt="demo 1" />
+    <img src="github-readme-assets/demo1.png" width="800" alt="demo 1" />
 </p>	
 
 ## How to use admin panel to manage contents
