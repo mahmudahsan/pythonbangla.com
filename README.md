@@ -34,6 +34,7 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 - [Setup And Running in Heroku without static content](#setup-and-running-in-heroku-without-static-content)
 - [Setup And Running in Heroku with static content](#setup-and-running-in-heroku-with-static-content)
 - [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
+- [How to force https in django](how-to-force-https-in-django)
 - [Contribution](#contribution)
 - [Questions or feedback?](#questions-or-feedback)
 
@@ -71,6 +72,8 @@ img, js ,css
 ## Setup And Running in Heroku with static content
 
 ## How to use admin panel to manage contents
+
+## How to force https in django
 
 ## Contribution
 If you want to contribute on this project, you're welcome to fork the project and submit a pull request. Just try to not break the existing things.
