@@ -191,7 +191,18 @@ Now fill the form for our demo purpose. In later you can modify/remove/add anyth
 Now visit http://127.0.0.1:8000 again to see the updates
 
 #### Social Links
-1. 
+
+1. To add social links like facebook, twitter etc
+
+<p align="center">
+    <img src="github-readme-assets/demo-social1.png" width="800" alt="demo-social1" />
+ </p>
+ 
+ * Add item in Social Link table. If you don't provide any link, nothing will appear at top. By default the social icons are shown from djangodemo/static/img/social dirs
+ 
+ <p align="center">
+    <img src="github-readme-assets/demo-social2.png" width="800" alt="demo-social2" />
+ </p>
 
 
 ## Setup Amazon S3 CDN to upload static content 
