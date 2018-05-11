@@ -58,6 +58,8 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 
 ## Setup in local machine
 
+Let assume our project name will be djangodemo
+
 1. First clone this project or fork and clone your fork url
 ```shell
 git clone https://github.com/mahmudahsan/pythonbangla.com.git djangodemo
@@ -221,6 +223,16 @@ Django by default doesn't support serving static files in production.
 ## Setup And Running in Heroku with static content
 
 ## How to force https in django
+
+If your up the project in [heroku](https://www.heroku.com) and use their premium service and add a domain, [heroku](https://www.heroku.com) will automatically add a SSL so you can use https instead of http.
+
+* To redirect https by default update djangodemo/pythonbangla_project/settings.py and at the end of the file add the following code
+
+```Python
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+```
 
 ## Contribution
 If you want to contribute on this project, you're welcome to fork the project and submit a pull request. Just try to not break the existing things.
