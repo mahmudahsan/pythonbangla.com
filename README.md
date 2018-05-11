@@ -12,7 +12,7 @@
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
     </a>
     <a href="https://twitter.com/mahmudahsan">
-        <img src="https://img.shields.io/badge/contact%40-mahmudahsan-green.svg" alt="Twitter: @mahmudahsan" />
+        <img src="https://img.shields.io/badge/contact%40-mahmudahsan-red.svg" alt="Twitter: @mahmudahsan" />
     </a>
 </p>
 
