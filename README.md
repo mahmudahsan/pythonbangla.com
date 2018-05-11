@@ -58,8 +58,21 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 
 ## Setup in local machine
 
+1. First clone this project or fork and clone your fork url
 ```shell
+git clone https://github.com/mahmudahsan/pythonbangla.com.git djangodemo
 
+# Now enter the project dir
+cd djangodemo
+```
+
+2. Now run and install django by pipenv
+
+```shell
+pipenv install django
+
+# Activate pipenv
+pipenv shell
 ```
 
 ## Setup PostgreSQL in local machine
