@@ -30,10 +30,10 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 - [Features](#features)
 - [Setup in local machine](#setup-in-local-machine)
 - [Setup PostgreSQL in local machine](#setup-postgresql-in-local-machine)
+- [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
 - [Setup Amazon S3 CDN to upload static content](#setup-amazon-s3-cdn-to-upload-static-content)
 - [Setup And Running in Heroku without static content](#setup-and-running-in-heroku-without-static-content)
 - [Setup And Running in Heroku with static content](#setup-and-running-in-heroku-with-static-content)
-- [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
 - [How to force https in django](#how-to-force-https-in-django)
 - [Contribution](#contribution)
 - [Questions or feedback?](#questions-or-feedback)
@@ -61,30 +61,63 @@ If you know django, postgresql, bootstrap you can easily modify html template an
 1. First clone this project or fork and clone your fork url
 ```shell
 git clone https://github.com/mahmudahsan/pythonbangla.com.git djangodemo
-
-# Now enter the project dir
-cd djangodemo
+cd djangodemo # Enter the project dir
 ```
 
 2. Now run and install django by pipenv
 
 ```shell
 pipenv install django
-
-# Activate pipenv
-pipenv shell
+pipenv shell # Activate pipenv
 ```
 
-## Setup PostgreSQL in local machine
+### Setup PostgreSQL in local machine
+
+1. Downlaod and install [PostgreSQL](https://www.postgresql.org/download/) 
+2. Run the PostgreSQL in your machine
+3. Download [pgAdmin](https://www.pgadmin.org) if you prefer managing PostgreSQL visually
+4. Run pgAdmin to create database visually
+5. Or Create a database in PostgreSQL in terminal
+6. Update django frameworks's project settings djangodemo/pythonbangla_project/settings.py
+
+```Python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "YOUR_LOCAL_DB_NAME",
+        "USER": "YOUR_POSTGRESQL_USER_NAME",
+        "PASSWORD": "YOUR_POSTGRESQL_PASSWORD",
+        "HOST": "localhost", 
+        "PORT": "5432", # usually this port unless your port is different
+    }
+}
+```
+7. Apply database migration from django to postgresql
+This will convert all the models to SQL tables in postgresql
+
+```shell
+python3 manage.py migrate
+```
+
+8. Start django server locally
+```shell
+python3 manage.py runserver
+```
+
+9. Visit http://127.0.0.1:8000/ in a web browser 
+You will see the following blank webpage without anything
+<p align="center">
+    <img src="github-readme-assets/demo1.png" width="375" max-width="50%" alt="demo 1" />
+</p>	
+
+## How to use admin panel to manage contents
 
 ## Setup Amazon S3 CDN to upload static content 
-img, js ,css
+Django by default doesn't support serving static files in production. 
 
 ## Setup And Running in Heroku without static content 
 
 ## Setup And Running in Heroku with static content
-
-## How to use admin panel to manage contents
 
 ## How to force https in django
 
