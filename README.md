@@ -1,3 +1,21 @@
+<p align="center">
+    <a href="/">
+        <img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build" />
+    </a>
+    <a href="https://www.djangoproject.com/">
+        <img src="https://img.shields.io/badge/django-2.0-blue.svg" alt="django" />
+    </a>
+    <a href="https://getbootstrap.com/">
+        <img src="https://img.shields.io/badge/bootstrap-4.0-orange.svg" alt="Bootstrap" />
+    </a>
+    <a href="https://github.com/mahmudahsan/pythonbangla.com/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
+    </a>
+    <a href="https://twitter.com/mahmudahsan">
+        <img src="https://img.shields.io/badge/contact%40-mahmudahsan-green.svg" alt="Twitter: @mahmudahsan" />
+    </a>
+</p>
+
 # pythonbangla.com
 A dynamic content management system for publishing youtube videos and blog post in a single page web application.
 I developed this web app to place all my youtube video tutorials and related blog post links in one place. 
