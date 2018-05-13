@@ -15,7 +15,7 @@ class HomeView(TemplateView):
         context['site_option'] = SiteOption.objects.all()
         
         # Topic category and contents
-        context['topic_category'] = TopicCategory.objects.all().order_by('pk')
+        context['topic_category'] = TopicCategory.objects.all().order_by('order')
 
         for topic in context['topic_category']:
             topic.contents = TopicContent.objects.filter(topic_category=topic.id).order_by('order')

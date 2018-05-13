@@ -26,6 +26,8 @@ class TopicCategory(models.Model):
         default=YOUTUBE,
     )
 
+    order = models.FloatField(default=0)
+
     def __str__(self):
         return self.title_english + " | " + self.title_other
 
