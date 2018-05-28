@@ -48,6 +48,9 @@ class TopicContent(models.Model):
 
 class SiteOption(models.Model):
     header = models.TextField(default='', blank=True, null=True)
+    title  = models.CharField(max_length=200, default=None, blank=True, null=True)
+    meta_author = models.CharField(max_length=100, default=None, blank=True, null=True)
+    meta_description = models.TextField(default='', blank=True, null=True)
 
     def __str__(self):
         return "Customize frontend from admin panel"

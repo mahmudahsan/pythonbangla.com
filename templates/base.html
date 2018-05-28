@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ site_option.0.meta_description|default:"" }}">
+    <meta name="author" content="{{ site_option.0.meta_author|default:"" }}">
     <link rel="icon" href="{% static 'img/favicons/favicon.ico' %}">
 
-    <title>Python Bangla Tutorial for beginners and advanced</title>
+    <title>{{ site_option.0.title|default:"" }}</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicons/apple-touch-icon.png' %}">
@@ -30,13 +30,15 @@
     <!-- Facebook Open Graph -->
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="পাইথন বাংলা টিউটোরিয়াল" />
-    <meta property="og:description" content="এই সাইটে বেসিক এবং এডভান্সড পাইথন প্রোগ্রামিং নিয়ে অনেকগুলো ভিডিও টিউটোরিয়াল পাবলিশ করা হয়েছে। পাইথন কি, কিভাবে পাইথন সেটআপ করতে হয়, কিভাবে কোড লিখে রান করতে হয় এরকম অনেক দরকারি এবং এডভান্সড কাজ করতে চাইলে যেমন ওয়েবপেজ স্ক্র‍্যাপিং, এসকিউএল ডাটাবেজ, ওয়েবপেজ টেস্টি, রেগুলার এক্সপ্রেশন, ওয়েব অটোমেশন এসব নিয়েও আলোচনা করা হয়েছে।" />
+    <meta property="og:title" content="{{ site_option.0.title|default:"" }}" />
+    <meta property="og:description" content="{{ site_option.0.meta_description|default:"" }}" />
     <meta property="og:image" content="{% static 'img/pythonbangla.jpg' %}" />
 
 
     <!-- Header section from admin panel -->
-    {{ site_option.0.header|safe }}
+    {% if site_option.0.header is defined %}
+        {{ site_option.0.header|safe }}
+    {% endif %}
 </head>
 
 <body>
