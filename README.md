@@ -210,6 +210,7 @@ Now visit http://127.0.0.1:8000 again to see the updates
 
 * To do this add site option and paste javascript code in header section
 * Only create one field in this table and add as many javascript code you want
+* Also provide Title, Meta Author and Meta Description fields to show them in your site's html page
 
  <p align="center">
     <img src="github-readme-assets/demo9.png" width="800" alt="demo 9" />
