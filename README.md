@@ -24,6 +24,10 @@ Demo: [Pythonbangla.com](http://pythonbangla.com)
 ## Usage
 If you know django, postgresql, bootstrap you can easily modify html template and backend according to your project needs. But if you just want a site like the demo [Pythonbangla.com](http://pythonbangla.com) you can change the images in static directory in the project, and add contents from your or your client's youtube channel or blog post. To know how to setup, follow the table of contents.
 
+### Other Python Projects
+- [Bank Rates](https://github.com/mahmudahsan/bankrates)
+- [Python Tutorials](https://github.com/mahmudahsan/thinkdiff)
+
 # Table of Contents
 
 - [Technology Used](#technology-used)
