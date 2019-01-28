@@ -19,7 +19,8 @@
 # pythonbangla.com
 A dynamic content management system for publishing youtube videos and blog post in a single page web application.
 I developed this web app to place all my youtube video tutorials and related blog post links in one place. 
-Demo: [Pythonbangla.com](http://pythonbangla.com)
+
+## I NO LONGER MANAGE THIS PROJECT
 
 ## Usage
 If you know django, postgresql, bootstrap you can easily modify html template and backend according to your project needs. But if you just want a site like the demo [Pythonbangla.com](http://pythonbangla.com) you can change the images in static directory in the project, and add contents from your or your client's youtube channel or blog post. To know how to setup, follow the table of contents.
