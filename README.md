@@ -20,9 +20,9 @@
 A dynamic content management system for publishing youtube videos and blog post in a single page web application.
 I developed this web app to place all my youtube video tutorials and related blog post links in one place.
 
-Demo 1: [Django + PostgreSQL + Heroku](https://pb-947583-bn474.herokuapp.com) | Source Code: [Github Django](https://github.com/mahmudahsan/pythonbangla.com)
+Demo 1 🤓: [Django + PostgreSQL + Heroku](https://pb-947583-bn474.herokuapp.com) | Source Code: [Github Django](https://github.com/mahmudahsan/pythonbangla.com)
 
-Demo 2: [React + Firebase](http://pythonbangla.com) | Source Code: [Github React](https://github.com/mahmudahsan/python-bangla-react)
+Demo 2 😎: [React + Firebase](http://pythonbangla.com) | Source Code: [Github React](https://github.com/mahmudahsan/python-bangla-react)
 
 ## 🔥 I developed a React and Firebase based similar project. So this django based project is no longer maintained. React based project's source code [https://github.com/mahmudahsan/python-bangla-react](https://github.com/mahmudahsan/python-bangla-react)
 
